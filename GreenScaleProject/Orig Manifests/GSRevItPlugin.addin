@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+	<AddIn Type="Command">
+		<Assembly>C:\GS\Debug\GSRevItPlugin.dll</Assembly>
+		<FullClassName>GSRevItPlugin.GreenScale</FullClassName>
+		<ClientId>b7a4a67b-c503-4712-bfc0-e560acb5be53</ClientId>
+		<Text>GSRevItPlugin</Text>
+		<VendorId>CRC</VendorId>
+		<VisibilityMode>AlwaysVisible</VisibilityMode>
+	</AddIn>
+</RevitAddIns>

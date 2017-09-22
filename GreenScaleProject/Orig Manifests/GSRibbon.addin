@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Application">
+    <Name>GreenScale</Name>
+    <Assembly>C:\GS\Debug\GSPanel.dll</Assembly>
+    <AddInId>782faa9b-f9ae-4fe2-b407-ef07fe9ba53d</AddInId>
+    <FullClassName>GSPanel.GSAddPanel</FullClassName>
+    <VendorId>CRC</VendorId>
+    <VendorDescription>Center for Research Computing University of Notre Dame</VendorDescription>
+  </AddIn>
+</RevitAddIns>
