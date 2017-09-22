@@ -1,0 +1,60 @@
+                Int64 ThisTicks = DateTime.Now.Ticks;
+
+                string strFileName = doc.Title.Substring(0, doc.Title.Length - 4);
+                if (strFileName.Contains("."))
+                {
+                    int intPipe = strFileName.IndexOf(".");
+                    strFileName = strFileName.Substring(0, intPipe);
+                }
+                strFileName = strFileName.Replace(" ", "_");
+                strFileName = strFileName + "." + ThisTicks;
+                //doc.SaveAs("C:/Users/ScottS/Desktop/RevIt Exports/" + strFileName + ".rvt");
+                doc.Export("C:/Users/ScottS/Desktop/RevIt Exports/", strFileName, gbExportOptions);
+
+                string strDQ = @"""";
+                string strArgConcat;
+                // Retrieve the settings
+
+                string converterPath = "C:/Users/ScottS/Documents/Visual Studio 2013/Projects/GreenScaleV1/main.py";
+                string pythonPath = "C:/Python27/Python.exe";
+                string xmlpath = "C:/Users/ScottS/Desktop/RevIt Exports/" + strFileName + ".xml";
+                string output = "C:/Users/ScottS/Desktop/RevIt Exports/";
+
+                // Start the python
+                ProcessStartInfo start = new ProcessStartInfo();
+                start.FileName = @pythonPath;
+                strArgConcat = strDQ + converterPath.Replace("\\", "/") + strDQ + " " + strDQ + xmlpath.Replace("\\", "/") + strDQ + " " + strDQ + output.Replace("\\", "/") + strDQ + " -o ";
+                start.Arguments = strArgConcat;
+                start.UseShellExecute = false;
+                start.RedirectStandardOutput = true;
+                start.CreateNoWindow = true;
+                using (Process process = Process.Start(start))
+                {
+                    string processOutput = process.StandardOutput.ReadToEnd();
+                    process.WaitForExit();
+
+                    MessageBox.Show(processOutput);
+                    //using (StreamReader reader = process.StandardOutput)
+                    //{
+                    //    string result = reader.ReadToEnd();
+                    //    //Console.WriteLine(result);
+                    //}
+                }
+
+                System.Windows.Forms.Form frmInfo = new System.Windows.Forms.Form();
+                Chart myChart = new Chart();
+                myChart.ChartAreas.Add("PieChart");
+                myChart.Series.Add("PieData");
+                myChart.Series["PieData"].ChartArea = "PieChart";
+                myChart.Series["PieData"].ChartType = SeriesChartType.Pie;
+                myChart.Series["PieData"].Name = "PieData";
+                myChart.Series["PieData"].Points.Add(10);
+                myChart.Series["PieData"].Points.Add(90);
+
+                frmInfo.Controls.Add(myChart);
+                myChart.Show();
+                
+                frmInfo.Show();
+
+                // Display a success message
+                MessageBox.Show("Green Scale Tool Processed Successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);

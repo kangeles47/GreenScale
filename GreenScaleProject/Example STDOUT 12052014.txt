@@ -1,0 +1,70 @@
+Number of Missing Materials:  0
+Total EE:  93844652.4501
+total_building_volume in cubic feet:  763.919509043
+total_building_ee for confidence #s:  93844652.4501
+total_materials:  11
+Confidence and EE Data from M_ConfidenceTuplesDict and M_DictEEPercents by material for whole building-----------------
+list_key per ID below: material, c, CF, LF, volume_%, ee_%
+mtl1,Concrete Precast: 8",0.75,0.130903843026,0.0436346143421,0.174538457369,0.0833248795374
+mtl2,Asphalt Shingle: 1/2",0.66,0.00850865787792,0.00438324799772,0.0128919058756,0.0304186357591
+mtl3,Brick Common: 8",0.81,0.438089348789,0.102761699099,0.540851047888,0.681411193681
+mtl4,1 1/2 in wood,0.61,0.00197008576998,0.00125956303327,0.00322964880325,0.00266282364997
+mtl5,Softwood Lumber: 3 1/2",0.7,0.0248453450123,0.0106480050053,0.0354933500176,0.0336595556725
+mtl6,Rigid insulation: 2",0.37,0.0500287219296,0.0851840400423,0.135212761972,0.0664164189627
+mtl7,Structure Wood Joist/Rafter Layer: 11 1/2",0.1,0.00444770752709,0.0400293677438,0.0444770752709,0.0421791290618
+mtl8,Metal surface,0.46,6.32186574253e-05,7.42132065428e-05,0.000137431863968,0.00587293424336
+mtl9,1/8 in Pilkington single glazing,0.72,1.96355765528e-05,7.63605754832e-06,2.72716341011e-05,0.00330665438248
+mtl10,Gypsum Wall Board: 1/2",0.06,0.00202819142958,0.0317749990634,0.033803190493,0.0165376024697
+mtl11,Plywood Sheathing: 3/4",0.87,0.0168239371677,0.00251392164575,0.0193378588135,0.0342101725804
+CF_sum_total:  0.677728692764
+LF_sum_total:  0.322271307236
+Sum of volume percents by material is 1? 0.322271307236
+Sum of ee percents by material is 1? 1.0
+MDOOR,0.00336708066722,0.00853575789333
+GSP4R,2.72716341011e-05,0.00330665438248
+cons-2,0.174538457369,0.0833248795374
+cons-3,0.74536035037,0.798024770786
+cons-1,0.07670683996,0.106807937401
+Sum of Cons Vol Percents is 1?  1.0
+Sum of Cons EE Percents is 1?  1.0
+Confidence and EE Data from A_ConfidenceTuplesDict and A_DictEEPercents by ASSEMBLY for whole building-----------------
+total_MaterialDict_ee:  93844652.4501
+CF_sum_total_at_assembly_level,MDOOR,0.60387755102
+LF_sum_total_at_assembly_level,MDOOR,0.39612244898
+CF_sum_total_at_assembly_level,GSP4R,0.72
+LF_sum_total_at_assembly_level,GSP4R,0.28
+CF_sum_total_at_assembly_level,cons-2,0.75
+LF_sum_total_at_assembly_level,cons-2,0.25
+CF_sum_total_at_assembly_level,cons-3,0.690929705215
+LF_sum_total_at_assembly_level,cons-3,0.309070294785
+CF_sum_total_at_assembly_level,cons-1,0.388235294118
+LF_sum_total_at_assembly_level,cons-1,0.611764705882
+CF_sum_total_at_building_level_from_assembly_calc: 0.677728692764
+LF_sum_total_at_building_level_from_assembly_calc: 0.322271307236
+M1, 571.887293427
+M2, 492.290443897
+M3, 381.351574495
+M4, 244.47697654
+M5, 130.473968102
+M6, 79.509015353
+M7, 89.642741538
+M8, 66.192985578
+M9, 77.363616391
+M10, 257.432119195
+M11, 364.279310502
+M12, 565.766054519
+Total TM:  3320.66609954
+Models Finished
+
+
+Accessing data from Dictionary:
+?ThisDict["mtl1"]
+{string[6]}
+    [0]: "Concrete Precast: 8\""
+    [1]: "0.75"
+    [2]: "0.130903843026"
+    [3]: "0.0436346143421"
+    [4]: "0.174538457369"
+    [5]: "0.0833248795374"
+?ThisDict["mtl1"][0]
+"Concrete Precast: 8\""
