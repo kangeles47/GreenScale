@@ -1,0 +1,19 @@
+INFO:aggr:Started
+INFO:Assembly_V1:Assembly Totals:
+INFO:Coder_V1:Data For Developers: Notes from gbxml.py
+INFO:TMuser_V1:Thermal Model User Program Started
+INFO:EEcoder_V1:Embodied Energy Coder Program Started
+INFO:EEuser_V1:Embodied Energy User Program Started
+INFO:EEcoder_V1: 
+INFO:EEcoder_V1: 
+INFO:EEcoder_V1: 
+INFO:EEcoder_V1:Missing Materials Data
+INFO:EEuser_V1:Embodied Energy Data:
+INFO:EEuser_V1:Model File Path:, D:/Users/Karen/Documents/Revit 2016/4Buildings/PostBreak/RC_FRAME.xml
+INFO:EEuser_V1:Location: C:/Users/Karen/Desktop/GreenScale Project/GreenScale Project/GSInstaller/Installer/GS/Locations/USA_VA_Sterling-Washington.Dulles.Intl.AP.724030_TMY3.epw
+INFO:Coder_V1:No Constr Type for this Surface - default used aim0389
+INFO:Coder_V1:No Constr Type for this Surface - default used aim0400
+INFO:Coder_V1:No Constr Type for this Surface - default used aim0415
+INFO:Coder_V1:No ID tag in gbxml or door types - default door used MDOOR
+INFO:Coder_V1:No Constr Type for this Surface - default used aim0436
+INFO:Coder_V1:No Constr Type for this Surface - default used aim0447
