@@ -1,0 +1,21 @@
+*** Installation started 2014/04/28 16:22 ***
+Source: C:\Users\Scott\Downloads\Polygon2-2.0.6.win-amd64-py2.7.exe
+999 Root Key: HKEY_LOCAL_MACHINE
+020 Reg DB Key: [Software\Microsoft\Windows\CurrentVersion\Uninstall]Polygon2-py2.7
+040 Reg DB Value: [Software\Microsoft\Windows\CurrentVersion\Uninstall\Polygon2-py2.7]DisplayName=Python 2.7 Polygon2-2.0.6 (64-bit)
+040 Reg DB Value: [Software\Microsoft\Windows\CurrentVersion\Uninstall\Polygon2-py2.7]UninstallString="C:\Python27\RemovePolygon2.exe" -u "C:\Python27\Polygon2-wininst.log"
+200 File Copy: C:\Python27\Lib\site-packages\Polygon2-2.0.6-py2.7.egg-info
+100 Made Dir: C:\Python27\Lib\site-packages\Polygon
+200 File Copy: C:\Python27\Lib\site-packages\Polygon\cPolygon.pyd
+200 File Copy: C:\Python27\Lib\site-packages\Polygon\IO.py
+200 File Copy: C:\Python27\Lib\site-packages\Polygon\Shapes.py
+200 File Copy: C:\Python27\Lib\site-packages\Polygon\Utils.py
+200 File Copy: C:\Python27\Lib\site-packages\Polygon\__init__.py
+200 File Copy: C:\Python27\Lib\site-packages\Polygon\__init__.pyc
+200 File Copy: C:\Python27\Lib\site-packages\Polygon\Utils.pyc
+200 File Copy: C:\Python27\Lib\site-packages\Polygon\Shapes.pyc
+200 File Copy: C:\Python27\Lib\site-packages\Polygon\IO.pyc
+200 File Copy: C:\Python27\Lib\site-packages\Polygon\__init__.pyo
+200 File Copy: C:\Python27\Lib\site-packages\Polygon\Utils.pyo
+200 File Copy: C:\Python27\Lib\site-packages\Polygon\Shapes.pyo
+200 File Copy: C:\Python27\Lib\site-packages\Polygon\IO.pyo
