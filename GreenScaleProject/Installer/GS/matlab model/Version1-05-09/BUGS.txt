@@ -1,0 +1,10 @@
+Mainwork.m - line 88:
+	|| strcmp(Infor_surface{7, surface_id}.surfaceType,'RasiedFloor')
+~	|| strcmp(Infor_surface{7, surface_id}.surfaceType,'RaisedFloor')
+
+
+get_hc_external.m
+if 100 < abs(Wind_speed_dir-Az_surface) < 260 is not evaluated (just the 100< is)
+(Impact the get_hc_external tests in python code)
+
+Change all the weather to 1997 1 1 3 and  1997 1 1 4 to not have to use the Fakeweather file
