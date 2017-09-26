@@ -1,0 +1,275 @@
+
+Version,
+  7.1;                      ! Version Identifier
+
+SimulationControl,
+  No,                       ! Do Zone Sizing Calculation
+  No,                       ! Do System Sizing Calculation
+  No,                       ! Do Plant Sizing Calculation
+  Yes,                      ! Run Simulation for Sizing Periods
+  Yes;                      ! Run Simulation for Weather File Run Periods
+
+ProgramControl,
+  1;                        ! Number of Threads Allowed
+
+Sizing:Parameters,
+  ;                         ! Heating Sizing Factor
+
+RunPeriod,
+  OS:RunPeriod 1,           ! Name
+  1,                        ! Begin Month
+  1,                        ! Begin Day of Month
+  12,                       ! End Month
+  31,                       ! End Day of Month
+  Thursday,                 ! Day of Week for Start Day
+  Yes,                      ! Use Weather File Holidays and Special Days
+  Yes,                      ! Use Weather File Daylight Saving Period
+  Yes,                      ! Apply Weekend Holiday Rule
+  Yes,                      ! Use Weather File Rain Indicators
+  Yes,                      ! Use Weather File Snow Indicators
+  1;                        ! Number of Times Runperiod to be Repeated
+
+GlobalGeometryRules,
+  UpperLeftCorner,          ! Starting Vertex Position
+  Counterclockwise,         ! Vertex Entry Direction
+  Relative,                 ! Coordinate System
+  Relative,                 ! Daylighting Reference Point Coordinate System
+  Relative;                 ! Rectangular Surface Coordinate System
+
+Material:NoMass,
+  mat-lay-cons-2-1,         ! Name
+  ,                         ! Roughness
+  0.00694,                  ! Thermal Resistance {m2-K/W}
+  0.9,                      ! Thermal Absorptance
+  0.7,                      ! Solar Absorptance
+  0.7;                      ! Visible Absorptance
+
+Material:NoMass,
+  mat-lay-cons-2-2,         ! Name
+  ,                         ! Roughness
+  0.845545,                 ! Thermal Resistance {m2-K/W}
+  0.9,                      ! Thermal Absorptance
+  0.7,                      ! Solar Absorptance
+  0.7;                      ! Visible Absorptance
+
+Material:NoMass,
+  mat-lay-cons-1-1,         ! Name
+  ,                         ! Roughness
+  0.364158,                 ! Thermal Resistance {m2-K/W}
+  0.9,                      ! Thermal Absorptance
+  0.7,                      ! Solar Absorptance
+  0.7;                      ! Visible Absorptance
+
+Material:NoMass,
+  mat-lay-cons-2-3,         ! Name
+  ,                         ! Roughness
+  0.00694,                  ! Thermal Resistance {m2-K/W}
+  0.9,                      ! Thermal Absorptance
+  0.7,                      ! Solar Absorptance
+  0.7;                      ! Visible Absorptance
+
+Construction,
+  cons-1,                   ! Name
+  mat-lay-cons-1-1;         ! Layer 1
+
+Construction,
+  cons-2,                   ! Name
+  mat-lay-cons-2-1,         ! Layer 1
+  mat-lay-cons-2-2,         ! Layer 2
+  mat-lay-cons-2-3;         ! Layer 3
+
+Building,
+  bldg-1,                   ! Name
+  ,                         ! North Axis {deg}
+  ,                         ! Terrain
+  ,                         ! Loads Convergence Tolerance Value
+  ,                         ! Temperature Convergence Tolerance Value {deltaC}
+  ,                         ! Solar Distribution
+  ,                         ! Maximum Number of Warmup Days
+  ;                         ! Minimum Number of Warmup Days
+
+Shading:Building:Detailed,
+  su-10,                    ! Name
+  ,                         ! Transmittance Schedule Name
+  ,                         ! Number of Vertices
+  -3.4480981584, 14.8722969, 3.0399999144,             ! X,Y,Z Vertex 1 {m}
+  -3.4480981584, 14.8722969, 2.9964878856,             ! X,Y,Z Vertex 2 {m}
+  -4.9018585224, 14.8722969, 2.135799132,              ! X,Y,Z Vertex 3 {m}
+  -5.4758917152, 14.8722969, 0,                        ! X,Y,Z Vertex 4 {m}
+  -5.5080984072, 14.8722969, 0,                        ! X,Y,Z Vertex 5 {m}
+  -4.9262519712, 14.8722969, 2.1648691272;             ! X,Y,Z Vertex 6 {m}
+
+Shading:Building:Detailed,
+  su-12,                    ! Name
+  ,                         ! Transmittance Schedule Name
+  ,                         ! Number of Vertices
+  -3.4480981584, 16.9052970504, 3.0320062296,             ! X,Y,Z Vertex 1 {m}
+  -3.4480981584, 16.9052970504, 2.9964878856,             ! X,Y,Z Vertex 2 {m}
+  -4.9018585224, 16.9052970504, 2.135799132,              ! X,Y,Z Vertex 3 {m}
+  -5.4758917152, 16.9052970504, 0,                        ! X,Y,Z Vertex 4 {m}
+  -5.5110982488, 16.9052970504, 0,                        ! X,Y,Z Vertex 5 {m}
+  -4.9323747936, 16.9052970504, 2.153250456;              ! X,Y,Z Vertex 6 {m}
+
+Shading:Building:Detailed,
+  su-13,                    ! Name
+  ,                         ! Transmittance Schedule Name
+  ,                         ! Number of Vertices
+  -3.4480981584, 16.9052970504, 3.025496616,              ! X,Y,Z Vertex 1 {m}
+  -1.9617409584, 16.9052970504, 2.1455088408,             ! X,Y,Z Vertex 2 {m}
+  -1.3850983728, 16.9052970504, 0,                        ! X,Y,Z Vertex 3 {m}
+  -1.4203049064, 16.9052970504, 0,                        ! X,Y,Z Vertex 4 {m}
+  -1.9943380992, 16.9052970504, 2.135799132,              ! X,Y,Z Vertex 5 {m}
+  -3.4480981584, 16.9052970504, 2.9964878856;             ! X,Y,Z Vertex 6 {m}
+
+Shading:Building:Detailed,
+  su-11,                    ! Name
+  ,                         ! Transmittance Schedule Name
+  ,                         ! Number of Vertices
+  -3.4480981584, 14.8722969, 3.0399999144,             ! X,Y,Z Vertex 1 {m}
+  -1.9663766616, 14.8722969, 2.1627568632,             ! X,Y,Z Vertex 2 {m}
+  -1.3850983728, 14.8722969, 0,                        ! X,Y,Z Vertex 3 {m}
+  -1.4203049064, 14.8722969, 0,                        ! X,Y,Z Vertex 4 {m}
+  -1.9943380992, 14.8722969, 2.135799132,              ! X,Y,Z Vertex 5 {m}
+  -3.4480981584, 14.8722969, 2.9964878856;             ! X,Y,Z Vertex 6 {m}
+
+Zone,
+  sp-1-Room ThermalZone,    ! Name
+  ,                         ! Direction of Relative North {deg}
+  ,                         ! X Origin {m}
+  ,                         ! Y Origin {m}
+  ,                         ! Z Origin {m}
+  ,                         ! Type
+  ,                         ! Multiplier
+  ,                         ! Ceiling Height {m}
+  ,                         ! Volume {m3}
+  ,                         ! Floor Area {m2}
+  ,                         ! Zone Inside Convection Algorithm
+  ;                         ! Zone Outside Convection Algorithm
+
+BuildingSurface:Detailed,
+  OS:Surface 1,             ! Name
+  Floor,                    ! Surface Type
+  ,                         ! Construction Name
+  sp-1-Room ThermalZone,    ! Zone Name
+  Ground,                   ! Outside Boundary Condition
+  ,                         ! Outside Boundary Condition Object
+  NoSun,                    ! Sun Exposure
+  NoWind,                   ! Wind Exposure
+  ,                         ! View Factor to Ground
+  ,                         ! Number of Vertices
+  -1.4203049064, 16.9052970504, 0,                        ! X,Y,Z Vertex 1 {m}
+  -1.4203049064, 14.8722969, 0,                        ! X,Y,Z Vertex 2 {m}
+  -5.4758917152, 14.8722969, 0,                        ! X,Y,Z Vertex 3 {m}
+  -5.4758917152, 16.9052970504, 0;                        ! X,Y,Z Vertex 4 {m}
+
+BuildingSurface:Detailed,
+  su-6,                     ! Name
+  Wall,                     ! Surface Type
+  ,                         ! Construction Name
+  sp-1-Room ThermalZone,    ! Zone Name
+  Outdoors,                 ! Outside Boundary Condition
+  ,                         ! Outside Boundary Condition Object
+  SunExposed,               ! Sun Exposure
+  WindExposed,              ! Wind Exposure
+  ,                         ! View Factor to Ground
+  ,                         ! Number of Vertices
+  -3.4480981584, 14.8722969, 2.9964878856,             ! X,Y,Z Vertex 1 {m}
+  -4.9018585224, 14.8722969, 2.135799132,              ! X,Y,Z Vertex 2 {m}
+  -5.4758917152, 14.8722969, 0,                        ! X,Y,Z Vertex 3 {m}
+  -1.4203049064, 14.8722969, 0,                        ! X,Y,Z Vertex 4 {m}
+  -1.9943380992, 14.8722969, 2.135799132;              ! X,Y,Z Vertex 5 {m}
+
+BuildingSurface:Detailed,
+  su-4,                     ! Name
+  Roof,                     ! Surface Type
+  ,                         ! Construction Name
+  sp-1-Room ThermalZone,    ! Zone Name
+  Outdoors,                 ! Outside Boundary Condition
+  ,                         ! Outside Boundary Condition Object
+  SunExposed,               ! Sun Exposure
+  WindExposed,              ! Wind Exposure
+  ,                         ! View Factor to Ground
+  ,                         ! Number of Vertices
+  -3.4480981584, 14.8722969, 2.9964878856,             ! X,Y,Z Vertex 1 {m}
+  -1.9943380992, 14.8722969, 2.135799132,              ! X,Y,Z Vertex 2 {m}
+  -1.9943380992, 16.9052970504, 2.135799132,              ! X,Y,Z Vertex 3 {m}
+  -3.4480981584, 16.9052970504, 2.9964878856;             ! X,Y,Z Vertex 4 {m}
+
+BuildingSurface:Detailed,
+  su-5,                     ! Name
+  Wall,                     ! Surface Type
+  ,                         ! Construction Name
+  sp-1-Room ThermalZone,    ! Zone Name
+  Outdoors,                 ! Outside Boundary Condition
+  ,                         ! Outside Boundary Condition Object
+  SunExposed,               ! Sun Exposure
+  WindExposed,              ! Wind Exposure
+  ,                         ! View Factor to Ground
+  ,                         ! Number of Vertices
+  -4.9018585224, 16.9052970504, 2.135799132,              ! X,Y,Z Vertex 1 {m}
+  -5.4758917152, 16.9052970504, 0,                        ! X,Y,Z Vertex 2 {m}
+  -5.4758917152, 14.8722969, 0,                        ! X,Y,Z Vertex 3 {m}
+  -4.9018585224, 14.8722969, 2.135799132;              ! X,Y,Z Vertex 4 {m}
+
+BuildingSurface:Detailed,
+  su-1,                     ! Name
+  Roof,                     ! Surface Type
+  ,                         ! Construction Name
+  sp-1-Room ThermalZone,    ! Zone Name
+  Outdoors,                 ! Outside Boundary Condition
+  ,                         ! Outside Boundary Condition Object
+  SunExposed,               ! Sun Exposure
+  WindExposed,              ! Wind Exposure
+  ,                         ! View Factor to Ground
+  ,                         ! Number of Vertices
+  -3.4480981584, 16.9052970504, 2.9964878856,             ! X,Y,Z Vertex 1 {m}
+  -4.9018585224, 16.9052970504, 2.135799132,              ! X,Y,Z Vertex 2 {m}
+  -4.9018585224, 14.8722969, 2.135799132,              ! X,Y,Z Vertex 3 {m}
+  -3.4480981584, 14.8722969, 2.9964878856;             ! X,Y,Z Vertex 4 {m}
+
+BuildingSurface:Detailed,
+  su-2,                     ! Name
+  Wall,                     ! Surface Type
+  ,                         ! Construction Name
+  sp-1-Room ThermalZone,    ! Zone Name
+  Outdoors,                 ! Outside Boundary Condition
+  ,                         ! Outside Boundary Condition Object
+  SunExposed,               ! Sun Exposure
+  WindExposed,              ! Wind Exposure
+  ,                         ! View Factor to Ground
+  ,                         ! Number of Vertices
+  -1.9943380992, 14.8722969, 2.135799132,              ! X,Y,Z Vertex 1 {m}
+  -1.4203049064, 14.8722969, 0,                        ! X,Y,Z Vertex 2 {m}
+  -1.4203049064, 16.9052970504, 0,                        ! X,Y,Z Vertex 3 {m}
+  -1.9943380992, 16.9052970504, 2.135799132;              ! X,Y,Z Vertex 4 {m}
+
+BuildingSurface:Detailed,
+  su-7,                     ! Name
+  Wall,                     ! Surface Type
+  ,                         ! Construction Name
+  sp-1-Room ThermalZone,    ! Zone Name
+  Outdoors,                 ! Outside Boundary Condition
+  ,                         ! Outside Boundary Condition Object
+  SunExposed,               ! Sun Exposure
+  WindExposed,              ! Wind Exposure
+  ,                         ! View Factor to Ground
+  ,                         ! Number of Vertices
+  -3.4480981584, 16.9052970504, 2.9964878856,             ! X,Y,Z Vertex 1 {m}
+  -1.9943380992, 16.9052970504, 2.135799132,              ! X,Y,Z Vertex 2 {m}
+  -1.4203049064, 16.9052970504, 0,                        ! X,Y,Z Vertex 3 {m}
+  -5.4758917152, 16.9052970504, 0,                        ! X,Y,Z Vertex 4 {m}
+  -4.9018585224, 16.9052970504, 2.135799132;              ! X,Y,Z Vertex 5 {m}
+
+OutputControl:Table:Style,
+  HTML;                     ! Column Separator
+
+Output:Table:SummaryReports,
+  AllSummary;               ! Report Name 1
+
+Output:VariableDictionary,
+  IDF,                      ! Key Field
+  Unsorted;                 ! Sort Option
+
+Output:SQLite,
+  SimpleAndTabular;         ! Option Type
+
