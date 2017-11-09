@@ -21,12 +21,9 @@ from objects.Area import Area
 from ctypes import *
 import time
 from GSUtility import GSUtility
-
-#Changes to this script for initial run: switched shadowflag value to 0., Update input file locations.
-#C:/Users/Karen/Desktop/GreenScale Project/GreenScale Project/Additional Models/L_1Floor.xml #filepath to original model
-
+#'D:/Users/Karen/Documents/Revit 2016/RC_FRAME_play.xml'
 # Default values are primarily for testing. It's expected that in use values will be passed in.
-def main(argv, inputfile='D:/Users/Karen/Documents/Revit 2016/4Buildings/PostBreak/RC_FRAME.xml', outputpath='Output/', modelflag='3', devflag="1", shadowflag="0", locationfile = 'C:/Users/Karen/Desktop/GreenScale Project/GreenScale Project/GSInstaller/Installer/GS/Locations/USA_VA_Sterling-Washington.Dulles.Intl.AP.724030_TMY3.epw'):
+def main(argv, inputfile='D:/Users/Karen/Documents/Revit 2016/GreenScale Trials/RC_FRAME.xml', outputpath='Output/', modelflag='3', devflag="1", shadowflag="0", locationfile = 'C:/Users/Karen/Desktop/GreenScale Project/GreenScale Project/Installer/GS/Locations/USA_IL_Chicago-OHare.Intl.AP.725300_TMY31.epw'):
     if len(sys.argv) == 8:
         inputfile = sys.argv[1] #2 for python, 1 for .NET, due to indexing differences. Comment out to run with defaults.
         outputpath = sys.argv[2] #3 for python, 2 for .NET, due to indexing differences. Comment out to run with defaults.
@@ -34,6 +31,17 @@ def main(argv, inputfile='D:/Users/Karen/Documents/Revit 2016/4Buildings/PostBre
         devflag = sys.argv[4]
         shadowflag = sys.argv[5]
         locationfile = sys.argv[6]
+
+        # 2016 Version testing with Single Room Model
+        #C:/Users/hfergus2/Desktop/MyPythonExport/Single_Room_2016.xml
+        #Four_Room_2016.xml
+        #Avon_Bldg_2016.xml
+        #Vet_Center_2016.xml
+        #L_1Floor_2016.xml
+        #L_2Floor_2016.xml
+
+        # 2014 Single Room Model
+        #C:/Users/hfergus2/Desktop/GSbranch/tests/input/Single_model.xml
 
     U = GSUtility()
     U.setDevFlag(devflag)
@@ -175,28 +183,31 @@ def main(argv, inputfile='D:/Users/Karen/Documents/Revit 2016/4Buildings/PostBre
         EEend = time.clock()
         U.devPrint("Time for EE Module: " + str(EEend-EEstart))
 
+    print "==================================================================================="
+    print "==================================================================================="
+    print "==================================================================================="
+
     #Check if TM model should be run
     if (modelflag == '2' or modelflag == '3'):
-
         # Input parameters for Thermal Model (TM)
         TMstart = time.clock()
         TM_user.info("Thermal Model Data")
         pathStr = str(inputfile)
         TM_user.info("Model File Path:, %s" % pathStr)  # Record Model Identifier or Path for Log
         TM_user.info("   ")
-        TM_user.info("Washington,Hours 1-24,January 1-December 31,Coeff = 1,No Shadows")
+        TM_user.info("Chicago,Hours 1-24,January 1-December 31,Coeff = 1,No Shadows")
         #TM_user.info("   ")
         model1 = ModelV1()
         model1.gbxml = inputfile
         model1.location = locationfile
         #print "check:  ", model1.location
         model1.start_date = datetime(year=1997, month=1, day=1, hour=0)
-        model1.end_date = datetime(year=1997, month=12, day=31, hour=23)
+        model1.end_date = datetime(year=1997, month=1, day=31, hour=23)
         model1.Coeff = 1        # Currently using 0.25, 0.45, 1.00
         model1.ShadowsFlag = int(shadowflag)  # 1 means calculate shadows, 0 means ignore shadow module
         model1.Q_total = 0
         # Zones are part of the gbxml.py but not sure at this point how to have them set from here...
-        model1.terrain = 'Flat or Open Countryside'  # Will be one of these from a list of options offered to the user:
+        model1.terrain = 'Towns and City Scapes'  # Will be one of these from a list of options offered to the user:
             #   'Flat or Open Countryside'
             #   'Rough or Wooded Country'
             #   'Towns and City Scapes'
