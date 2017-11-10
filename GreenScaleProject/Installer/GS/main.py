@@ -23,7 +23,7 @@ import time
 from GSUtility import GSUtility
 #'D:/Users/Karen/Documents/Revit 2016/RC_FRAME_play.xml'
 # Default values are primarily for testing. It's expected that in use values will be passed in.
-def main(argv, inputfile='D:/Users/Karen/Documents/Revit 2016/GreenScale Trials/RC_FRAME.xml', outputpath='Output/', modelflag='3', devflag="1", shadowflag="0", locationfile = 'C:/Users/Karen/Desktop/GreenScale Project/GreenScale Project/Installer/GS/Locations/USA_IL_Chicago-OHare.Intl.AP.725300_TMY31.epw'):
+def main(argv, inputfile='D:/Users/Karen/Documents/Revit 2016/GreenScale Trials/RC_FRAME.xml', outputpath='C:/Users/Karen/Desktop/GreenScale Project/GreenScale Project/Installer/GS/Output/', modelflag='3', devflag="1", shadowflag="0", locationfile = 'C:/Users/Karen/Desktop/GreenScale Project/GreenScale Project/Installer/GS/Locations/USA_IL_Chicago-OHare.Intl.AP.725300_TMY31.epw'):
     if len(sys.argv) == 8:
         inputfile = sys.argv[1] #2 for python, 1 for .NET, due to indexing differences. Comment out to run with defaults.
         outputpath = sys.argv[2] #3 for python, 2 for .NET, due to indexing differences. Comment out to run with defaults.
