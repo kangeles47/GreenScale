@@ -48,8 +48,8 @@ class GreenScaleV1():
         # Initialize the GBXML
         self.gbxml = gbXML(self.gbxml)
         # Get the materials list
-        materials = self.gbxml.get_allMaterials()
-        remoteData = wsData()
+        materials = self.gbxml.get_allMaterials() #looks for all material tags in gbxml from Revit AEC database
+        remoteData = wsData() #creates a remoteData object that is a wsData type
         remoteData.getmaterials(materials)
         # Retrieve the spaces
         self.spaces = self.gbxml.get_spaces()
@@ -60,8 +60,8 @@ class GreenScaleV1():
         areaWinDict = area.getWinDictionary()
 
         # For each spaces, calculate Embodied Energy and Embodied Water for a given building
-        self.buildingEE(self.input_dir, self.shade_devices, areaDict, areaWinDict)
-
+        EE_spaces=self.buildingEE(self.input_dir, self.shade_devices, areaDict, areaWinDict) #accumulators
+        print(EE_spaces)
         return None
 
     def getDBMaterials(self):
@@ -148,13 +148,13 @@ class GreenScaleV1():
             amountEE = assembly[key]
             if key not in assembly_descript:
                 Assembly.info("Assembly Dictionary Item:, %s, %s, %s" % (key, amountEE, key))  # Record the Building's EE, EW by Assembly
-                #print "assembly_descript ", key, amountEE, key
+                print "assembly_descript ", key, amountEE, key #uncomment in order to see embodied energy per assembly
             else:
                 assemblyParts = assembly_descript[key]
                 assemblyParts = str(assemblyParts)
                 assemblyParts = assemblyParts.replace(',', ' + ')
                 Assembly.info("Assembly Dictionary Item:, %s, %s, %s" % (key, amountEE, assemblyParts))  # Record the Building's EE, EW by Assembly
-                #print "assembly_descript ", key, amountEE, assemblyParts
+                print "assembly_descript ", key, amountEE, assemblyParts #uncomment in order to see embodied energy per assembly
         Assembly.info("   ")
 
         # Add this to the overall return parameters
@@ -191,7 +191,3 @@ class GreenScaleV1():
         """
         C = Confidence()
         c = C.calculate_confidence_values(MaterialVolumeDict, MaterialDict)
-
-
-
-
