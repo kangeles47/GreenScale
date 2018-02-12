@@ -21,9 +21,9 @@ from objects.Area import Area
 from ctypes import *
 import time
 from GSUtility import GSUtility
-#'D:/Users/Karen/Documents/Revit 2016/RC_FRAME_play.xml'
+
 # Default values are primarily for testing. It's expected that in use values will be passed in.
-def main(argv, inputfile='D:/Users/Karen/Documents/Revit 2016/GreenScale Trials/RC_FRAME.xml', outputpath='C:/Users/Karen/Desktop/GreenScale Project/GreenScale Project/Installer/GS/Output/', modelflag='3', devflag="1", shadowflag="0", locationfile = 'C:/Users/Karen/Desktop/GreenScale Project/GreenScale Project/Installer/GS/Locations/USA_IL_Chicago-OHare.Intl.AP.725300_TMY31.epw'):
+def main(argv, inputfile='D:/Users/Karen/Documents/Revit 2016/NIBS/GBXMLs/RC_FRAME.xml', outputpath='C:/Users/Karen/Desktop/GreenScale Project/GreenScale Project/Installer/GS/Output/', modelflag='3', devflag="1", shadowflag="0", locationfile = 'C:/Users/Karen/Desktop/GreenScale Project/GreenScale Project/Installer/GS/Locations/USA_MO_St.Louis-Lambert.Intl.AP.724340_TMY3.epw'):
     if len(sys.argv) == 8:
         inputfile = sys.argv[1] #2 for python, 1 for .NET, due to indexing differences. Comment out to run with defaults.
         outputpath = sys.argv[2] #3 for python, 2 for .NET, due to indexing differences. Comment out to run with defaults.
@@ -183,6 +183,7 @@ def main(argv, inputfile='D:/Users/Karen/Documents/Revit 2016/GreenScale Trials/
         EEend = time.clock()
         U.devPrint("Time for EE Module: " + str(EEend-EEstart))
 
+
     print "==================================================================================="
     print "==================================================================================="
     print "==================================================================================="
@@ -195,14 +196,14 @@ def main(argv, inputfile='D:/Users/Karen/Documents/Revit 2016/GreenScale Trials/
         pathStr = str(inputfile)
         TM_user.info("Model File Path:, %s" % pathStr)  # Record Model Identifier or Path for Log
         TM_user.info("   ")
-        TM_user.info("Chicago,Hours 1-24,January 1-December 31,Coeff = 1,No Shadows")
+        TM_user.info("St.Louis,Hours 1-24,January 1-December 31,Coeff = 1,No Shadows")
         #TM_user.info("   ")
         model1 = ModelV1()
         model1.gbxml = inputfile
         model1.location = locationfile
         #print "check:  ", model1.location
         model1.start_date = datetime(year=1997, month=1, day=1, hour=0)
-        model1.end_date = datetime(year=1997, month=1, day=31, hour=23)
+        model1.end_date = datetime(year=1997, month=12, day=31, hour=23)
         model1.Coeff = 1        # Currently using 0.25, 0.45, 1.00
         model1.ShadowsFlag = int(shadowflag)  # 1 means calculate shadows, 0 means ignore shadow module
         model1.Q_total = 0
@@ -302,7 +303,6 @@ if __name__ == "__main__":
     #logging.basicConfig()
     main(sys.argv[1:])
     #main(inputfile, outputfile)
-
 
 
 
